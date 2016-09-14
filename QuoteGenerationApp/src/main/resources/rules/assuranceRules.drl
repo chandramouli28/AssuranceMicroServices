@@ -1,0 +1,45 @@
+//created on: Sep 13, 2016
+package drools;
+
+//list any import classes here.
+import com.asurance.quotegeneration.entity.Quote;
+import com.asurance.quotegeneration.entity.PrimaryDataVO;
+
+
+//declare any global variables here
+global Quote quote;
+//global org.slf4j.Logger logger
+
+
+
+rule "Rule_1"
+    when 
+    	//eval(true)
+    	eval(true)
+        //conditions
+    then
+    	quote.setQuoteAmount(52.0);
+    	quote.setQuoteId(getQuoteId());
+    	System.out.println("Created new quote");
+        //actions
+
+end
+
+rule "Check age"
+    //include attributes such as "salience" here...
+    when
+        PrimaryDataVO( age < 25 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 10);
+    	System.out.println(quote.getQuoteAmount());
+        //actions
+
+end
+
+
+function String getQuoteId(){
+	return "123Assu2016";
+}
+
+
+
