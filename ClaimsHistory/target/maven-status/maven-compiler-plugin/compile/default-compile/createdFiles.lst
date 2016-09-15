@@ -1,0 +1,9 @@
+com\assurance\claims\history\webservice\ServiceProvider.class
+com\assurance\claims\history\webservice\GetVehicleClaimHistoryResponse.class
+com\assurance\claims\history\webservice\VehicleClaimsService_VehicleClaimsServiceImplPort_Client.class
+com\assurance\claims\service\ClaimsHistory.class
+com\assurance\claims\history\webservice\GetVehicleClaimHistory.class
+com\assurance\claims\history\webservice\VehicleClaimsInfo.class
+com\assurance\claims\history\webservice\VehicleClaimsService.class
+com\assurance\claims\history\webservice\ObjectFactory.class
+com\assurance\claims\history\webservice\package-info.class
