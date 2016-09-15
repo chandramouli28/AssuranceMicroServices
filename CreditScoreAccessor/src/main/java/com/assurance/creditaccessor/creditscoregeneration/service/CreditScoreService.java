@@ -9,7 +9,7 @@ import org.codehaus.jettison.json.JSONException;
 
 
 
-@Path("/claims")
+@Path("/creditscore")
 public class CreditScoreService {
 
 	@Path("{param}")
