@@ -2,7 +2,7 @@ package com.asurance.quotegeneration.service;
 
 import org.springframework.stereotype.Service;
 
-@Service("paymentHandler")
+//@Service("paymentHandler")
 public class PaymentHandler {
 
 	public boolean verifyPayment(){

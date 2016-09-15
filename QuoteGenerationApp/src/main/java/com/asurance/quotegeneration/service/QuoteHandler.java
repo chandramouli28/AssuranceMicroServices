@@ -2,7 +2,7 @@ package com.asurance.quotegeneration.service;
 
 import org.springframework.stereotype.Service;
 
-@Service("quoteHandler")
+//@Service("quoteHandler")
 public class QuoteHandler {
 
 }
