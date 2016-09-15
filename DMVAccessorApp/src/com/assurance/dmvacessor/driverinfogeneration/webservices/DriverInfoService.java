@@ -42,14 +42,12 @@ public class DriverInfoService {
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 
 			String driversHistory;
-			System.out.println("Output from Server .... \n");
 			while ((driversHistory = br.readLine()) != null) {
 				return Response.status(200).entity(driversHistory).build();
 			}
 
 			conn.disconnect();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 

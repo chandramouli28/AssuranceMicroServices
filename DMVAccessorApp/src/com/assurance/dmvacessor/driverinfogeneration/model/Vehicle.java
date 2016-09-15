@@ -22,18 +22,6 @@ public class Vehicle {
 	@Column(name = "model")
 	private String model;
 
-	/*@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "a_id")
-	private Address vechicleAddress;
-
-	public Address getVechicleAddress() {
-		return vechicleAddress;
-	}
-
-	public void setVechicleAddress(Address vechicleAddress) {
-		this.vechicleAddress = vechicleAddress;
-	}
-*/
 	public String getVin() {
 		return vin;
 	}

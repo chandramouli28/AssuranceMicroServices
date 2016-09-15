@@ -28,9 +28,7 @@ public class VehicleService {
 	public Response getVehiclesList(String address) throws JSONException {
 
 		VehicleService rc = new VehicleService();
-		System.out.println("Inside restclient before public records call"+address);
 		String vehicleListJson = rc.getVehicleList(address);
-		System.out.println("vehicle LIst " + vehicleListJson);
 		return Response.status(200).entity(vehicleListJson).build();
 	}
 
@@ -55,8 +53,6 @@ public class VehicleService {
 			}
 
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-
-			System.out.println("Output from Server .... \n");
 			while ((output = br.readLine()) != null) {
 				return output;
 			}
