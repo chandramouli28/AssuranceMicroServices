@@ -7,19 +7,15 @@ import javax.ws.rs.Produces;
 
 import org.codehaus.jettison.json.JSONException;
 
-
-
 @Path("/creditscore")
 public class CreditScoreService {
 
 	@Path("{param}")
 	@GET
 	@Produces("application/json")
-	public int getCreditScore(@PathParam("param") String ssn)throws JSONException {
-		CreditScoreClient score= new CreditScoreClient();
-				return score.getCreditScore(ssn);
-	
-	
-	
+	public int getCreditScore(@PathParam("param") String ssn) throws JSONException {
+		CreditScoreClient score = new CreditScoreClient();
+		return score.getCreditScore(ssn);
+
 	}
 }

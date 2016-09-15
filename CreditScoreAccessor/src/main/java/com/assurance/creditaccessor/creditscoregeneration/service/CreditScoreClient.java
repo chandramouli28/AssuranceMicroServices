@@ -7,12 +7,11 @@ import com.assurance.creditaccessor.creditscoregeneration.webservice.CreditScore
 
 public class CreditScoreClient {
 
-	public int getCreditScore(String ssn) throws JSONException{
+	public int getCreditScore(String ssn) throws JSONException {
 		CreditScoreService_Service csService = new CreditScoreService_Service();
-		CreditScoreService  service = csService.getCreditScoreServiceImplPort(); 
+		CreditScoreService service = csService.getCreditScoreServiceImplPort();
 		int creditScore = service.getCreditScoreBySSN(ssn);
-		System.out.println("Inside getCreditScore"+creditScore);
 		return creditScore;
-		
+
 	}
 }
