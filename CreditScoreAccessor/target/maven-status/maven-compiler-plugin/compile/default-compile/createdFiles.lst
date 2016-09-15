@@ -1,9 +1,0 @@
-com\assurance\creditaccessor\creditscoregeneration\service\CreditScoreService.class
-com\assurance\creditaccessor\creditscoregeneration\webservice\package-info.class
-com\assurance\creditaccessor\creditscoregeneration\webservice\CreditScoreService.class
-com\assurance\creditaccessor\creditscoregeneration\service\CreditScoreClient.class
-com\assurance\creditaccessor\creditscoregeneration\webservice\CreditScoreService_Service.class
-com\assurance\creditaccessor\creditscoregeneration\webservice\GetCreditScoreBySSN.class
-com\assurance\creditaccessor\creditscoregeneration\webservice\CreditScoreService_CreditScoreServiceImplPort_Client.class
-com\assurance\creditaccessor\creditscoregeneration\webservice\GetCreditScoreBySSNResponse.class
-com\assurance\creditaccessor\creditscoregeneration\webservice\ObjectFactory.class
