@@ -103,7 +103,7 @@ public class QuoteGenerator {
 		licenseNumbers.trim();
 		
 		
-		final String url="http://localhost:8080/DMVPublicRecords/getdriverhistory/{licenseNumbers}";
+		final String url="http://localhost:8282/DMVAccessorApp/rest/getDriverInfo/{licenseNumbers}";
 		
 		Map<String, String> params = new HashMap<String, String>();
 	    params.put("licenseNumbers", licenseNumbers);
