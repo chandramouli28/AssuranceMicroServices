@@ -31,7 +31,7 @@
 	</repositories>
 
 	<dependencies>
-	<!--  Drools -->
+		<!-- Drools -->
 		<dependency>
 			<groupId>org.kie</groupId>
 			<artifactId>kie-api</artifactId>
@@ -107,6 +107,12 @@
 			<version>20160810</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.6.2</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>QuoteGenerationApp</finalName>
@@ -129,8 +135,8 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
-			
+
+
 		</plugins>
 	</build>
 </project>

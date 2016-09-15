@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,12 +17,16 @@ import com.asurance.quotegeneration.entity.DriverHistory;
 import com.asurance.quotegeneration.entity.PrimaryDataVO;
 import com.asurance.quotegeneration.entity.Quote;
 import com.asurance.quotegeneration.entity.QuoteDetails;
+import com.asurance.quotegeneration.utils.ObjectMapperUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 
 @Service("quoteGenerator")
 public class QuoteGenerator {
 
+	@Autowired
+	DroolsHandler droolsHandler;
+	
 	public Quote generateQuote(QuoteDetails quoteDetails){
 		
 		int driverPoints = 0;
@@ -30,6 +35,8 @@ public class QuoteGenerator {
 		int primaryDriverAge = 0;
 		
 		PrimaryDataVO droolData = new PrimaryDataVO();
+		Quote quote = new Quote();
+		
 		List<String> licenseIdList = quoteDetails.getDriverList();
 		String vin = quoteDetails.getVin();
 		
@@ -52,15 +59,11 @@ public class QuoteGenerator {
 		droolData.setClaimOnVehicle(claimHistory.getClaimAmount());
 		droolData.setPoints(driverPoints);
 		droolData.setEducationLevel(quoteDetails.getEducation());
-	//	droolData.setHasPrevInsurance(hasPrevInsurance);
-	//	droolData.setPrimary(isPrimary);
 		droolData.setVehicleMakeYear(quoteDetails.getVehicleMakeYear());
 	
+		quote = droolsHandler.runDroolEngine(droolData);
 		
-		
-		DroolsHandler.runDroolEngine(droolData);
-		
-		return new Quote();
+		return quote;
 	};
 	
 	
@@ -109,22 +112,22 @@ public class QuoteGenerator {
 		RestTemplate restTemplate = new RestTemplate();
 		String result =  restTemplate.getForObject(url,String.class,params);
 		
-		ObjectMapper mapper = new ObjectMapper();
-		List<DriverHistory> list = null;
-		 try {
-			list = mapper.readValue(result, TypeFactory.defaultInstance().constructCollectionType(List.class, DriverHistory.class));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		List<DriverHistory> driverHistoryList = ObjectMapperUtil.mapObjectDriverHistory(result);
 		 
-		return list;
+		return driverHistoryList;
 				
 	}
 	
-	public ClaimHistory getClaimHistory(String vin){
+	public static void main(String[] args){
 		
-		final String url="";
+		ClaimHistory claim = new ClaimHistory();
+		claim = getClaimHistory("111");
+		System.out.println("claim " + claim.getClaimAmount() + "for " + claim.getNumOfClaims() + "claims");
+	}
+	
+	public static ClaimHistory getClaimHistory(String vin){
+		
+		final String url="http://localhost:8080/ClaimsHistory/rest/claims/{vin}";
 		
 		Map<String,String> params = new HashMap<String,String>();
 		params.put("vin", vin);

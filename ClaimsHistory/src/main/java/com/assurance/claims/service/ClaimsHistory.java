@@ -14,7 +14,7 @@ public class ClaimsHistory {
 	@GET
 	@Produces("application/json")
 	public ClaimsInfo getClaimsHistory(@PathParam("param") String vin) {
-		
+		System.out.println(vin);
 		ClaimsHistoryService claims = new ClaimsHistoryService();
 		return claims.getClaimsInfo(vin);
 		

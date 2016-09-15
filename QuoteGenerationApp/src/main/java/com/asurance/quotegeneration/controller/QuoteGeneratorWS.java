@@ -12,18 +12,26 @@ import org.springframework.web.bind.annotation.RestController;
 import com.asurance.quotegeneration.entity.Quote;
 import com.asurance.quotegeneration.entity.QuoteDetails;
 import com.asurance.quotegeneration.service.QuoteGenerator;
+import com.asurance.quotegeneration.utils.ObjectMapperUtil;
 
 @RestController
+@RequestMapping(value = "/getQuote")
 public class QuoteGeneratorWS {
 
 	@Autowired
 	QuoteGenerator quoteGenerator;
 
-	@RequestMapping(value = "/getQuote", method = RequestMethod.POST, consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Quote> getQuote( @RequestBody QuoteDetails quoteDetails) {
-
+	@RequestMapping( method = RequestMethod.POST, consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.TEXT_PLAIN_VALUE)
+	public ResponseEntity<String> getQuote( @RequestBody String jsonString) {
+		
+		System.out.println(jsonString);
+		/*System.out.println(quoteDetails.getVin());
+		System.out.println(quoteDetails.getDriverList().get(0));*/
+		QuoteDetails quoteDetails = ObjectMapperUtil.mapObjectQuoteDetails(jsonString);
 		Quote quote = quoteGenerator.generateQuote(quoteDetails);
-		return new ResponseEntity<Quote>(quote, HttpStatus.OK);
+		//System.out.println(quote.);
+		String stat = quoteDetails.getDriverList().get(0);
+		return new ResponseEntity<String>(stat, HttpStatus.OK);
 
 	}
 	

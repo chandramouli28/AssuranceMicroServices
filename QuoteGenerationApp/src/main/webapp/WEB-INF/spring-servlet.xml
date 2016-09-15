@@ -15,15 +15,5 @@
       <property name="suffix" value=".jsp" />
    </bean>
    
-   
-   <!-- <bean id = "quoteHandler" class="com.asurance.quotegeneration.service.QuoteHandler">
-   </bean>
-   
-   <bean id = "quoteGenerator" class="com.asurance.quotegeneration.service.QuoteGenerator">
-   </bean>
-   
-   <bean id= "policyService" class="com.asurance.quotegeneration.service.PolicyService">
-   </bean>
-   
-   <bean id="paymentHandler" class="com.asurance.quotegeneration.service.PaymentHandler"></bean> -->
-</beans>
+   <import resource="application-context.xml"/>
+   </beans>
