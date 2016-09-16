@@ -17,7 +17,13 @@
 		<jaxrs.version>2.0.1</jaxrs.version>
 		<hibernate.version>4.3.5.Final</hibernate.version>
 	</properties>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 	
+>>>>>>> base
+=======
+>>>>>>> CM
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -58,10 +64,16 @@
 			<artifactId>jersey-client</artifactId>
 			<version>1.8</version>
 		</dependency>
-
+<<<<<<< HEAD
+<<<<<<< HEAD
 	</dependencies>
+	<build>
+		<plugins>
+=======
 
-
+=======
+>>>>>>> CM
+	</dependencies>
 	<build>
 		<plugins>
 		<plugin>
@@ -72,6 +84,7 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+>>>>>>> base
 			<plugin>
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.9</version>
