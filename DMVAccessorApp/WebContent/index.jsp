@@ -7,6 +7,10 @@
 <title>Welcome to Assurance DMV Accesor Service</title>
 </head>
 <body>
+<<<<<<< HEAD
 	<h1>Welcome to DMV Accessor</h1>
+=======
+<h1>Welcome to DMV Accessor</h1>
+>>>>>>> base
 </body>
 </html>

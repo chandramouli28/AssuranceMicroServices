@@ -6,10 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
 /**
  * @author Nikshitha Nagelly 
  * This entity class provides all driver information
  */
+=======
+>>>>>>> base
 @Entity
 @Table(name = "driver_info")
 public class Driver {

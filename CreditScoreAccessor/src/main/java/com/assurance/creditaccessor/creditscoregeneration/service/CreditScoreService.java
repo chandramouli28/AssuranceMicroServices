@@ -7,11 +7,16 @@ import javax.ws.rs.Produces;
 
 import org.codehaus.jettison.json.JSONException;
 
+<<<<<<< HEAD
 /**
  * @author Nikshitha Nagelly 
  * This class is exposed as web service which gives
  * credit score
  */
+=======
+
+
+>>>>>>> base
 @Path("/creditscore")
 public class CreditScoreService {
 

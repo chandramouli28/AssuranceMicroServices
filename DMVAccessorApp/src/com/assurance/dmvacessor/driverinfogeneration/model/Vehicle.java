@@ -8,10 +8,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+<<<<<<< HEAD
 /**
  * @author Nikshitha Nagelly 
  * This entity class provides all vehicle information
  */
+=======
+>>>>>>> base
 @Entity
 @Table(name = "vehicle")
 public class Vehicle {
@@ -26,6 +29,21 @@ public class Vehicle {
 	@Column(name = "model")
 	private String model;
 
+<<<<<<< HEAD
+=======
+	/*@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "a_id")
+	private Address vechicleAddress;
+
+	public Address getVechicleAddress() {
+		return vechicleAddress;
+	}
+
+	public void setVechicleAddress(Address vechicleAddress) {
+		this.vechicleAddress = vechicleAddress;
+	}
+*/
+>>>>>>> base
 	public String getVin() {
 		return vin;
 	}

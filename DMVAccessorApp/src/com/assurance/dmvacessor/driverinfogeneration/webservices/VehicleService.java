@@ -7,6 +7,10 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+<<<<<<< HEAD
+=======
+
+>>>>>>> base
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,6 +21,7 @@ import javax.ws.rs.core.Response;
 
 import org.codehaus.jettison.json.JSONException;
 
+<<<<<<< HEAD
 /**
  * @author Nikshitha Nagelly 
  * This class is exposed as web service which
@@ -28,6 +33,11 @@ public class VehicleService {
 	/*
 	 * This method returns vehicle list based on address
 	 */
+=======
+@Path("/getvehicles")
+public class VehicleService {
+
+>>>>>>> base
 	@Path("/getList")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
@@ -35,7 +45,13 @@ public class VehicleService {
 	public Response getVehiclesList(String address) throws JSONException {
 
 		VehicleService rc = new VehicleService();
+<<<<<<< HEAD
 		String vehicleListJson = rc.getVehicleList(address);
+=======
+		System.out.println("Inside restclient before public records call"+address);
+		String vehicleListJson = rc.getVehicleList(address);
+		System.out.println("vehicle LIst " + vehicleListJson);
+>>>>>>> base
 		return Response.status(200).entity(vehicleListJson).build();
 	}
 
@@ -60,6 +76,11 @@ public class VehicleService {
 			}
 
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+<<<<<<< HEAD
+=======
+
+			System.out.println("Output from Server .... \n");
+>>>>>>> base
 			while ((output = br.readLine()) != null) {
 				return output;
 			}

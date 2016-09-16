@@ -1,0 +1,15 @@
+com\asurance\quotegeneration\controller\PaymentWS.class
+com\asurance\quotegeneration\service\QuoteGenerator.class
+com\asurance\quotegeneration\controller\QuoteGeneratorWS.class
+com\asurance\quotegeneration\service\PolicyService.class
+com\asurance\quotegeneration\entity\ClaimHistory.class
+com\asurance\quotegeneration\entity\Quote.class
+com\asurance\quotegeneration\controller\PolicyWS.class
+com\asurance\quotegeneration\entity\QuoteDetails.class
+com\asurance\quotegeneration\entity\DriverHistory.class
+com\asurance\quotegeneration\entity\PrimaryDataVO.class
+com\asurance\quotegeneration\controller\QuoteHandlerWS.class
+com\asurance\quotegeneration\drools\DroolsHandler.class
+com\asurance\quotegeneration\service\PaymentHandler.class
+com\asurance\quotegeneration\service\QuoteHandler.class
+com\asurance\quotegeneration\entity\DriverDataVO.class
