@@ -41,7 +41,7 @@ rule "Rule by number of claims"
     when
         $p : PrimaryDataVO( numOfClaimsOnVehicle != 0 )
     then
-    	quote.setQuoteAmount(quote.getQuoteAmount() + 5);//($p.getNumOfClaimsOnVehicle()*10));
+    	quote.setQuoteAmount(quote.getQuoteAmount() + ($p.getNumOfClaimsOnVehicle()*10));
     	System.out.println(quote.getQuoteAmount() + "//by claims on vehicle");
         //actions
 
