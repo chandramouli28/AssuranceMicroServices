@@ -46,12 +46,16 @@ public class VehicleService {
 
 		VehicleService rc = new VehicleService();
 <<<<<<< HEAD
+<<<<<<< HEAD
 		String vehicleListJson = rc.getVehicleList(address);
 =======
 		System.out.println("Inside restclient before public records call"+address);
 		String vehicleListJson = rc.getVehicleList(address);
 		System.out.println("vehicle LIst " + vehicleListJson);
 >>>>>>> base
+=======
+		String vehicleListJson = rc.getVehicleList(address);
+>>>>>>> CM
 		return Response.status(200).entity(vehicleListJson).build();
 	}
 
@@ -77,10 +81,13 @@ public class VehicleService {
 
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 			System.out.println("Output from Server .... \n");
 >>>>>>> base
+=======
+>>>>>>> CM
 			while ((output = br.readLine()) != null) {
 				return output;
 			}

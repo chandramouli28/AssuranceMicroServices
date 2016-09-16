@@ -8,9 +8,13 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<h1>Welcome to DMV Accessor</h1>
 =======
 <h1>Welcome to DMV Accessor</h1>
 >>>>>>> base
+=======
+	<h1>Welcome to DMV Accessor</h1>
+>>>>>>> CM
 </body>
 </html>

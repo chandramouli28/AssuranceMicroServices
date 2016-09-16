@@ -71,9 +71,12 @@ public class DriverInfoService {
 
 			String driversHistory;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			System.out.println("Output from Server .... \n");
 >>>>>>> base
+=======
+>>>>>>> CM
 			while ((driversHistory = br.readLine()) != null) {
 				return Response.status(200).entity(driversHistory).build();
 			}
@@ -81,9 +84,12 @@ public class DriverInfoService {
 			conn.disconnect();
 		} catch (MalformedURLException e) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			// TODO Auto-generated catch block
 >>>>>>> base
+=======
+>>>>>>> CM
 			e.printStackTrace();
 		} catch (IOException e) {
 

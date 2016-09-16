@@ -18,9 +18,12 @@
 		<hibernate.version>4.3.5.Final</hibernate.version>
 	</properties>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	
 >>>>>>> base
+=======
+>>>>>>> CM
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -62,14 +65,15 @@
 			<version>1.8</version>
 		</dependency>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	</dependencies>
 	<build>
 		<plugins>
 =======
 
+=======
+>>>>>>> CM
 	</dependencies>
-
-
 	<build>
 		<plugins>
 		<plugin>

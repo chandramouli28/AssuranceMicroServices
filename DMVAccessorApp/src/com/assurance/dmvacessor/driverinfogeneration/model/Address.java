@@ -1,6 +1,7 @@
 package com.assurance.dmvacessor.driverinfogeneration.model;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**
  * @author Nikshitha Nagelly 
  * This entity class provides address information of
@@ -17,6 +18,13 @@ public class Address {
 	private int addressId;
 	private String addressLine1;
 >>>>>>> base
+=======
+public class Address {
+
+	private int addressId;
+	private String addressLine1;
+
+>>>>>>> CM
 	public Address(int addressid, String addressLine1, String addressLine2, String city, String state, String zipCode) {
 		super();
 		this.addressId = addressid;
@@ -27,14 +35,21 @@ public class Address {
 		this.zip = zipCode;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> base
+=======
+
+>>>>>>> CM
 	private String addressLine2;
 	private String city;
 	private String state;
 	private String zip;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> CM
 
 	public int getAddressid() {
 		return addressId;
@@ -84,6 +99,7 @@ public class Address {
 		this.zip = zipCode;
 	}
 
+<<<<<<< HEAD
 =======
 	public int getAddressid() {
 		return addressId;
@@ -122,14 +138,20 @@ public class Address {
 		this.zip = zipCode;
 	}
 >>>>>>> base
+=======
+>>>>>>> CM
 	@Override
 	public String toString() {
 		return "Address [addressid=" + addressId + ", addressLine1=" + addressLine1 + ", addressLine2=" + addressLine2
 				+ ", city=" + city + ", state=" + state + ", zipCode=" + zip + "]";
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 	
 >>>>>>> base
+=======
+
+>>>>>>> CM
 }

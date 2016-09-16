@@ -30,6 +30,7 @@ public class Vehicle {
 	private String model;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	/*@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "a_id")
@@ -44,6 +45,8 @@ public class Vehicle {
 	}
 */
 >>>>>>> base
+=======
+>>>>>>> CM
 	public String getVin() {
 		return vin;
 	}
