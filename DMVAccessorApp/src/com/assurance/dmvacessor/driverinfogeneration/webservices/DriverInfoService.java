@@ -25,10 +25,11 @@ public class DriverInfoService {
 	/*
 	 * This method returns drivers history based on license Number
 	 */
-	@POST
+	@GET
+	@Path("{param}")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response getDriversHistory(String licenseNum) {
+	@Consumes(MediaType.TEXT_PLAIN)
+	public Response getDriversHistory(@PathParam("param") String licenseNum) {
 
 		try {
 			URL url = new URL("http://localhost:8282/DMVPublicRecords/getdriverhistory");
