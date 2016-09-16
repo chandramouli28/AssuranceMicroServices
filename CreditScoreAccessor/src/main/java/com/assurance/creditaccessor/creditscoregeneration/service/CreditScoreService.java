@@ -7,9 +7,18 @@ import javax.ws.rs.Produces;
 
 import org.codehaus.jettison.json.JSONException;
 
+/**
+ * @author Nikshitha Nagelly 
+ * This class is exposed as web service which gives
+ * credit score
+ */
 @Path("/creditscore")
 public class CreditScoreService {
 
+	/*
+	 * This method is exposed as web method which internally gets credit score
+	 * based on given SSN
+	 */
 	@Path("{param}")
 	@GET
 	@Produces("application/json")
