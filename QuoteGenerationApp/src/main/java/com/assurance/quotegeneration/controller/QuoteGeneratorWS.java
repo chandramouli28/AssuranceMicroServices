@@ -24,7 +24,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *
  */
 @RestController
-@RequestMapping(value = "/getQuote")
 public class QuoteGeneratorWS {
 
 	@Autowired
@@ -35,10 +34,8 @@ public class QuoteGeneratorWS {
 	 * @param jsonString
 	 * @return response
 	 */
-	@RequestMapping( method = RequestMethod.POST, consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping( value = "/getQuote", method = RequestMethod.POST, consumes= MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> getQuote( @RequestBody String jsonString) {
-		
-		System.out.println(jsonString);
 		
 		CustomerDetails customerDetails = ObjectMapperUtil.mapObjectQuoteDetails(jsonString);
 		Quote quote = quoteGeneratorService.generateQuote(customerDetails);

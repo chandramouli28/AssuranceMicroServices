@@ -14,7 +14,7 @@
 		<runtime.version>6.4.0.Final</runtime.version>
 	</properties>
 
-	<repositories>
+	<!-- <repositories>
 		<repository>
 			<id>jboss-public-repository-group</id>
 			<name>JBoss Public Repository Group</name>
@@ -28,7 +28,7 @@
 				<updatePolicy>daily</updatePolicy>
 			</snapshots>
 		</repository>
-	</repositories>
+	</repositories> -->
 
 	<dependencies>
 		<!-- Drools -->

@@ -28,7 +28,11 @@ public class QuoteGeneratorService {
 
 	@Autowired
 	DroolsEngineHandler droolsEngineHandler;
+	
+	@Autowired
 	DriverHistoryClient driverHistoryClient;
+	
+	@Autowired
 	ClaimsHistoryClient claimsHistoryClient;
 
 	/**

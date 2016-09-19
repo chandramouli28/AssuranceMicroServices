@@ -52,6 +52,7 @@ public class DriverHistoryClient {
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(url, String.class, params);
 
+
 		List<DriverHistory> driverHistoryList = ObjectMapperUtil.mapObjectDriverHistory(result);
 
 		return driverHistoryList;
