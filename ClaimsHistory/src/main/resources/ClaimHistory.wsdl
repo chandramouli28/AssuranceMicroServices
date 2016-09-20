@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ServiceProvider" targetNamespace="http://service.claims.autocheck.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.claims.autocheck.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://service.claims.autocheck.com/" version="1.0" xmlns:tns="http://service.claims.autocheck.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="getVehicleClaimHistory" type="tns:getVehicleClaimHistory"/>
+<xs:element name="getVehicleClaimHistoryResponse" type="tns:getVehicleClaimHistoryResponse"/>
+<xs:complexType name="getVehicleClaimHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getVehicleClaimHistoryResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:vehicleClaimsInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="vehicleClaimsInfo">
+    <xs:sequence>
+      <xs:element name="claimAmount" type="xs:int"/>
+      <xs:element name="claimId" type="xs:int"/>
+      <xs:element name="claimYear" type="xs:int"/>
+      <xs:element minOccurs="0" name="vin" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getVehicleClaimHistoryResponse">
+    <wsdl:part element="tns:getVehicleClaimHistoryResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getVehicleClaimHistory">
+    <wsdl:part element="tns:getVehicleClaimHistory" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="VehicleClaimsService">
+    <wsdl:operation name="getVehicleClaimHistory">
+      <wsdl:input message="tns:getVehicleClaimHistory" name="getVehicleClaimHistory">
+    </wsdl:input>
+      <wsdl:output message="tns:getVehicleClaimHistoryResponse" name="getVehicleClaimHistoryResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceProviderSoapBinding" type="tns:VehicleClaimsService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getVehicleClaimHistory">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getVehicleClaimHistory">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVehicleClaimHistoryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceProvider">
+    <wsdl:port binding="tns:ServiceProviderSoapBinding" name="VehicleClaimsServiceImplPort">
+      <soap:address location="http://localhost:8080/claims/services/ServiceProvider"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

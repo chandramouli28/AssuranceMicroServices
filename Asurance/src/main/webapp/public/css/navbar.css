@@ -1,0 +1,74 @@
+#headerTitle{
+font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans serif;
+margin-left: 472px;
+margin-top: 20px;
+color: #e01e1e;
+font-size: x-large;
+}
+#navbar{
+height: 70px;
+
+margin-top: 0px;
+margin-bottom: 0px;
+
+}
+
+#navbar ul li {
+	margin-top: 8px;
+}
+#navbar ul:nth-child(2) li {
+	font-size: 20px;
+}
+#breadcrumb {
+padding: 8px 160px;
+margin-bottom: 0px;
+margin-left: 220px;
+list-style: none;
+background-color: #4c4848;
+border-radius: 0px;
+}
+#breadcrumb li a:focus, a:hover  {
+color: #f1071b;
+text-decoration: none;
+}
+#breadcrumb li {
+font-size: 20px;
+}
+#heading{
+	color: red;
+}
+
+
+  #tabs{
+   	margin-top: 70px;
+   	background-color: #4c4848;
+   	} 
+ 
+
+
+input[type=text], input[type=password], input[type=date], select {
+	border-radius: 4px;
+	border: solid 3px #cbc9c9;
+	background-color: #fcf8e3;
+}
+
+.glyphicon {
+	color: red;
+}
+.glyphicon-user, .glyphicon-home {
+	margin-right: 12px;
+}
+
+#registerForm, #loginForm {
+	margin-top: 58px;
+}
+#registerForm form {
+	margin-bottom: 80px;
+}
+
+/*#state.ng-invalid.ng-touched , input.ng-invalid.ng-touched {
+    border-color:red;
+}
+#state.ng-valid, input.ng-valid {
+    border-color:green;
+}*/
