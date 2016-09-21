@@ -8,27 +8,36 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+
+/**
+ * @author Nikshitha Nagelly This class is exposed as web service which
+ *         internally gets drivers history based on given license Number
+ */
 @Path("/getDriverInfo")
 public class DriverInfoService {
 
-	@POST
+	/*
+	 * This method returns drivers history based on license Number
+	 */
+	@GET
+	@Path("{param}")
 	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response getDriversHistory(String licenseNum) {
-
+//	@Consumes(MediaType.TEXT_PLAIN)
+	public Response getDriversHistory(@PathParam("param") String licenseNum) {
+		
 		try {
 			URL url = new URL("http://localhost:8282/DMVPublicRecords/getdriverhistory");
 
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setDoOutput(true);
-			conn.setRequestMethod("GET");
+			conn.setRequestMethod("POST");
 			conn.setRequestProperty("Content-Type", "application/json");
 
 			OutputStream os = conn.getOutputStream();
@@ -56,7 +65,6 @@ public class DriverInfoService {
 		}
 
 		return null;
-
 	}
 
 }

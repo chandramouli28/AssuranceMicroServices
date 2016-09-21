@@ -1,5 +1,10 @@
 package com.assurance.dmvacessor.driverinfogeneration.model;
 
+/**
+ * @author Nikshitha Nagelly 
+ * This entity class provides address information of
+ * customer
+ */
 public class Address {
 
 	private int addressId;

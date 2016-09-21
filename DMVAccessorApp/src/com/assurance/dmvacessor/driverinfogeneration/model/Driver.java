@@ -1,29 +1,23 @@
 package com.assurance.dmvacessor.driverinfogeneration.model;
 
-import javax.persistence.Column;
+/**
+ * @author Nikshitha Nagelly This entity class provides all driver information
+ */
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "driver_info")
 public class Driver {
 
-	@Id
-	@Column(name = "dl")
 	private String licenceNumber;
-	@Column(name = "driver_name")
+
 	private String name;
-	@Column(name = "DOB")
+
 	private String dob;
-	@Column(name = "exp_date")
+
 	private String expiryDate;
-	@Column(name = "points")
+
 	private String points;
-	@Column(name = "tickets")
+
 	private String tickets;
-	@Column(name = "issuing_state")
+
 	private String issuingState;
 
 	public String getLicenceNumber() {
