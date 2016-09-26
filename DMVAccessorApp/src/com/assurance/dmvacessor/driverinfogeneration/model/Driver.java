@@ -4,19 +4,6 @@ package com.assurance.dmvacessor.driverinfogeneration.model;
  * @author Nikshitha Nagelly This entity class provides all driver information
  */
 
-<<<<<<< HEAD
-=======
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-/**
- * @author Nikshitha Nagelly 
- * This entity class provides all driver information
- */
-@Entity
-@Table(name = "driver_info")
->>>>>>> base
 public class Driver {
 
 	private String licenceNumber;
