@@ -1,5 +1,7 @@
 package com.assurance.dmvacessor.driverinfogeneration.model;
 
+<<<<<<< HEAD
+=======
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,23 +9,27 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+>>>>>>> base
 
 /**
  * @author Nikshitha Nagelly 
  * This entity class provides all vehicle information
  */
+<<<<<<< HEAD
+
+=======
 @Entity
 @Table(name = "vehicle")
+>>>>>>> base
 public class Vehicle {
 
-	@Id
-	@Column(name = "vin")
+	
 	private String vin;
-	@Column(name = "year")
+	
 	private String year;
-	@Column(name = "make")
+	
 	private String make;
-	@Column(name = "model")
+	
 	private String model;
 
 	public String getVin() {
