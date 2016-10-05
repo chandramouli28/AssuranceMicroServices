@@ -4,6 +4,8 @@ package drools;
 //list any import classes here.
 import com.assurance.quotegeneration.model.Quote;
 import com.assurance.quotegeneration.model.CustomerVO;
+import java.util.Random;
+import java.util.Calendar;
 
 
 //declare any global variables here
@@ -20,7 +22,7 @@ rule "Rule_1"
     then
     	quote.setQuoteAmount(72.0);
     	quote.setQuoteId(getQuoteId());
-    	System.out.println("Created new quote");
+    	System.out.println("Created new quote" + quote.getQuoteId());
         //actions
 
 end
@@ -113,9 +115,61 @@ rule "Rule by amount of claims claimOnVehicle > 5000"
 
 end
 
+//Start-Added by CM
+rule "Rule by creditscore >= 800"
+    when
+        $p : CustomerVO( creditScore >= 800 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 2);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore >= 800");
+end
+
+rule "Rule by creditscore between 740-799"
+    when
+        $p : CustomerVO( creditScore >= 740 && creditScore <= 799 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 4);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore between 740-799");
+end
+
+rule "Rule by creditscore between 670-739"
+    when
+        $p : CustomerVO( creditScore >= 670 && creditScore <= 739 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 6);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore between 670-739");
+end
+
+rule "Rule by creditscore between 580-669"
+    when
+        $p : CustomerVO( creditScore >= 580 && creditScore <= 669 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 8);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore between 580-669");
+end
+
+rule "Rule by creditscore <= 579"
+    when
+        $p : CustomerVO( creditScore <= 579 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 10);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore <= 579");
+end
+
+//end
+
 
 function String getQuoteId(){
-	return "123Assu2016";
+	Calendar now = Calendar.getInstance();
+    int year = now.get(Calendar.YEAR);
+    int month = now.get(Calendar.MONTH) + 1;
+    int day =  now.get(Calendar.DATE);
+    Random rand = new Random();
+    String s1 = Integer.toString(year);
+    String s2 = Integer.toString(month);
+    String s3 = Integer.toString(day);
+	return (s1 + s2 + s3 + String.format("%04d", rand.nextInt(10000)));
+	//return "123Assu2016";
 }
 
 

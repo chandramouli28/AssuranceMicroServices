@@ -13,4 +13,5 @@
     <bean id = "claimsHistoryClient" class = "com.assurance.quotegeneration.client.ClaimsHistoryClient"/>
 	<bean id = "driverHistoryClient" class="com.assurance.quotegeneration.client.DriverHistoryClient"/>
 	<bean id = "droolsEngineUtil" class="com.assurance.quotegeneration.utils.DroolsEngineUtil"/>
+	<bean id = "creditHistoryClient" class="com.assurance.quotegeneration.client.CreditHistoryClient"/>
 </beans>

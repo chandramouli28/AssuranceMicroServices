@@ -17,7 +17,16 @@ public class CustomerVO {
 	private int points;
 	private boolean hasPrevInsurance;
 	private String educationLevel;
+	private int creditScore;
 	
+
+	public int getCreditScore() {
+		return creditScore;
+	}
+
+	public void setCreditScore(int creditScore) {
+		this.creditScore = creditScore;
+	}
 
 	public int getNumOfClaimsOnVehicle() {
 		return numOfClaimsOnVehicle;
