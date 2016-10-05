@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.assurance.quotegeneration.client.ClaimsHistoryClient;
+import com.assurance.quotegeneration.client.CreditHistoryClient;
 import com.assurance.quotegeneration.client.DriverHistoryClient;
 import com.assurance.quotegeneration.drools.DroolsEngineHandler;
 import com.assurance.quotegeneration.model.ClaimHistory;
@@ -34,6 +35,9 @@ public class QuoteGeneratorService {
 	
 	@Autowired
 	ClaimsHistoryClient claimsHistoryClient;
+	
+	@Autowired
+	CreditHistoryClient creditHistoryClient;
 
 	/**
 	 * generateQuote method takes customer details consumed by webservice as input and returns 
@@ -90,6 +94,11 @@ public class QuoteGeneratorService {
 		customerDroolData.setEducationLevel(customerDetails.getEducation());
 		customerDroolData.setVehicleMakeYear(customerDetails.getVehicleMakeYear());
 		
+//Start-Added by CM
+		String ssn = customerDetails.getSsn();
+		int creditScore = creditHistoryClient.getCreditScore(ssn);
+		customerDroolData.setCreditScore(creditScore);
+//End		
 		return customerDroolData;
 	};
 

@@ -115,6 +115,49 @@ rule "Rule by amount of claims claimOnVehicle > 5000"
 
 end
 
+//Start-Added by CM
+rule "Rule by creditscore >= 800"
+    when
+        $p : CustomerVO( creditScore >= 800 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 2);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore >= 800");
+end
+
+rule "Rule by creditscore between 740-799"
+    when
+        $p : CustomerVO( creditScore >= 740 && creditScore <= 799 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 4);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore between 740-799");
+end
+
+rule "Rule by creditscore between 670-739"
+    when
+        $p : CustomerVO( creditScore >= 670 && creditScore <= 739 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 6);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore between 670-739");
+end
+
+rule "Rule by creditscore between 580-669"
+    when
+        $p : CustomerVO( creditScore >= 580 && creditScore <= 669 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 8);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore between 580-669");
+end
+
+rule "Rule by creditscore <= 579"
+    when
+        $p : CustomerVO( creditScore <= 579 )
+    then
+    	quote.setQuoteAmount(quote.getQuoteAmount() + 10);
+    	System.out.println(quote.getQuoteAmount() + "// creditScore <= 579");
+end
+
+//end
+
 
 function String getQuoteId(){
 	Calendar now = Calendar.getInstance();
